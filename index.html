@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORMA | Redefine Your Nails</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2b2d42;
+      --secondary: #8d99ae;
+      --accent: #ef233c;
+      --bg-light: #f8f9fa;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-light);
+      color: var(--primary);
+      line-height: 1.6;
+    }
+    header, main, footer {
+      width: 100%;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    /* Hero */
+    .hero {
+      background: linear-gradient(115deg, #fff 75%, #e0e6f6 100%);
+      padding: 60px 0 40px;
+      text-align: center;
+      position: relative;
+    }
+    .hero img {
+      width: 100px;
+      margin-bottom: 32px;
+    }
+    .hero h1 {
+      font-size: 2.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 18px;
+      letter-spacing: -2px;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--secondary);
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+    .cta-btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 38px;
+      border: none;
+      border-radius: 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(239,35,60,0.08);
+    }
+    .cta-btn:hover {
+      background: #d90429;
+    }
+    section {
+      padding: 60px 0;
+    }
+    /* Features */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+    }
+    .feature {
+      flex: 1 1 250px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(44,49,93,.06);
+      padding: 32px 28px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .feature h3 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .feature p {
+      color: var(--secondary);
+      font-size: 1rem;
+    }
+    /* Benefits */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 36px;
+    }
+    .benefit {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(44,49,93,.05);
+      padding: 28px 22px;
+      text-align: left;
+    }
+    .benefit h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+    .benefit p {
+      font-size: 1rem;
+      color: var(--secondary);
+    }
+    /* Testimonials */
+    .testimonials-grid {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .testimonial {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 14px rgba(44,49,93,.04);
+      padding: 28px 28px 22px;
+      max-width: 340px;
+      flex: 1 1 300px;
+      text-align: center;
+    }
+    .testimonial p {
+      font-style: italic;
+      color: var(--primary);
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+    .testimonial .author {
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 1.05rem;
+    }
+    /* Pricing */
+    .pricing-cards {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .pricing-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(44,49,93,.06);
+      padding: 38px 32px;
+      text-align: center;
+      min-width: 280px;
+      flex: 1 1 250px;
+      max-width: 340px;
+      position: relative;
+    }
+    .pricing-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 22px;
+    }
+    .pricing-card .price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 16px;
+      margin-top: 8px;
+    }
+    .pricing-card ul {
+      list-style: none;
+      margin-bottom: 18px;
+    }
+    .pricing-card li {
+      color: var(--secondary);
+      margin-bottom: 7px;
+      font-size: 1rem;
+    }
+    .pricing-card .cta-btn {
+      width: 100%;
+    }
+    /* Contact Form */
+    .contact-form-section {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(44,49,93,.04);
+      border-radius: 18px;
+      padding: 38px 24px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .contact-form-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      text-align: center;
+      color: var(--primary);
+    }
+    form#leadform {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .form-group label {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 5px;
+      display: block;
+      font-size: 0.98rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      background: #f4f6fa;
+      border: 1px solid #e3e6f7;
+      border-radius: 8px;
+      padding: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      width: 100%;
+      resize: vertical;
+    }
+    .form-group textarea {
+      min-height: 74px;
+      max-height: 240px;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: 2px solid var(--accent);
+    }
+    .contact-form-section button {
+      align-self: flex-end;
+      margin-top: 10px;
+    }
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 22px 0;
+      font-size: 0.98rem;
+      margin-top: 32px;
+    }
+    /* Responsive  */
+    @media (max-width: 900px) {
+      .features, .testimonials-grid, .pricing-cards {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+    @media (max-width: 700px) {
+      .hero {
+        padding: 44px 0 24px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .container {
+        width: 97%;
+      }
+      section {
+        padding: 38px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <header>
+    <div class="hero container">
+      <img src="logo.png" alt="Your Brand">
+      <h1>Meet FORMA: Nail Perfection, Redefined</h1>
+      <p>FORMA is the new standard in nail care—where cutting-edge formulas meet modern design for stunning, long-lasting color. Express yourself boldly, beautifully, effortlessly. Your nails, your FORMA.</p>
+      <a href="#leadform" class="cta-btn">Try FORMA Today</a>
+    </div>
+  </header>
+  <main>
+    <!-- Features Section -->
+    <section>
+      <div class="container">
+        <div class="features">
+          <div class="feature">
+            <h3>Clean Ingredients</h3>
+            <p>FORMULA uses only vegan, cruelty-free, 21-free formulations for true peace of mind and safety.</p>
+          </div>
+          <div class="feature">
+            <h3>High Performance</h3>
+            <p>Our polishes deliver vibrant, chip-resistant color that lasts. Shine that stays with you through the week.</p>
+          </div>
+          <div class="feature">
+            <h3>Modern Colors</h3>
+            <p>A curated palette of trendsetting shades designed for every style and skin tone, from bold to neutral.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Benefits Section -->
+    <section>
+      <div class="container">
+        <h2 style="font-size:1.45rem; font-weight: 700; margin-bottom:30px; color:var(--primary); text-align:center;">Why Choose FORMA?</h2>
+        <div class="benefits-grid">
+          <div class="benefit">
+            <h4>Effortless Application</h4>
+            <p>Precision brush ensures flawless, streak-free results no matter your skill level.</p>
+          </div>
+          <div class="benefit">
+            <h4>Quick Dry Technology</h4>
+            <p>Ready to go in minutes—no smudges, no waiting around.</p>
+          </div>
+          <div class="benefit">
+            <h4>Resilient Shine</h4>
+            <p>Keep your nails looking salon-fresh with a durable, glossy finish that resists chips and fading.</p>
+          </div>
+          <div class="benefit">
+            <h4>Consciously Crafted</h4>
+            <p>Formulated without harmful chemicals—gentle on nails, kind to the planet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section>
+      <div class="container">
+        <h2 style="font-size:1.45rem; font-weight: 700; margin-bottom:30px; color:var(--primary); text-align:center;">What Our Fans Say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <p>“FORMA is a total game changer. The colors are so fresh, and my manicures last twice as long!”</p>
+            <div class="author">— Jessica M.</div>
+          </div>
+          <div class="testimonial">
+            <p>“Finally, a brand that truly cares about ingredients and performance. My new go-to for nails.”</p>
+            <div class="author">— Priya S.</div>
+          </div>
+          <div class="testimonial">
+            <p>“Quick dry, no chipping, and compliments all week. I’m obsessed with FORMA!”</p>
+            <div class="author">— Taylor A.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pricing Section -->
+    <section>
+      <div class="container">
+        <h2 style="font-size:1.45rem; font-weight: 700; margin-bottom:30px; color:var(--primary); text-align:center;">Simple, Honest Pricing</h2>
+        <div class="pricing-cards">
+          <div class="pricing-card">
+            <h3>Single Polish</h3>
+            <div class="price">$14</div>
+            <ul>
+              <li>Any color</li>
+              <li>21-free, vegan formula</li>
+              <li>Durable, chip-resistant finish</li>
+            </ul>
+            <a href="#leadform" class="cta-btn">Order Now</a>
+          </div>
+          <div class="pricing-card" style="border: 2px solid var(--accent); box-shadow: 0 0 0 2px var(--accent10), 0 2px 20px rgba(239,35,60,0.1)">
+            <h3>FORMA Set (4 pack)</h3>
+            <div class="price">$48</div>
+            <ul>
+              <li>Pick your shades</li>
+              <li>Exclusive colors</li>
+              <li>Early access to launches</li>
+            </ul>
+            <a href="#leadform" class="cta-btn">Get the Set</a>
+          </div>
+          <div class="pricing-card">
+            <h3>Subscription</h3>
+            <div class="price">$39/mo</div>
+            <ul>
+              <li>Monthly color drops</li>
+              <li>Members-only perks</li>
+              <li>Pause or cancel anytime</li>
+            </ul>
+            <a href="#leadform" class="cta-btn">Join Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Form Section -->
+    <section>
+      <div class="container">
+        <div class="contact-form-section">
+          <h2>Get in Touch</h2>
+          <form id="leadform" autocomplete="off">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message or Inquiry</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="cta-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2024 FORMA. All rights reserved.
+  </footer>
+</body>
+</html>
