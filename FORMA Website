@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FORMA - Redefining Nail Beauty</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #7f56d9;
+      --accent: #f6f3fa;
+      --bg: #fff;
+      --text: #22113a;
+      --gray: #a5a1b2;
+      --radius: 14px;
+      --transition: 0.2s cubic-bezier(.4,0,.2,1);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      background: var(--accent);
+      padding: 32px 0 64px 0;
+      text-align: center;
+    }
+    header img {
+      max-width: 155px;
+      height: auto;
+      display: block;
+      margin: 0 auto 18px auto;
+    }
+    .hero {
+      max-width: 650px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .hero p {
+      color: var(--gray);
+      font-size: 1.22rem;
+      margin-bottom: 30px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 16px 38px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 24px rgba(127,86,217,0.08);
+      transition: background var(--transition), box-shadow var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+    .cta-btn:hover {
+      background: #6842c2;
+      box-shadow: 0 8px 30px rgba(127,86,217,0.13);
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+    section {
+      margin-bottom: 64px;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--primary);
+      letter-spacing: -1px;
+      text-align: center;
+    }
+    .features-list,
+    .benefits-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+      margin-top: 20px;
+    }
+    .feature, .benefit {
+      background-color: var(--accent);
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      box-shadow: 0 4px 12px rgba(127,86,217,0.04);
+      text-align: left;
+    }
+    .feature h3,
+    .benefit h3 {
+      font-size: 1.20rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .feature p,
+    .benefit p {
+      color: var(--gray);
+      font-size: 1rem;
+    }
+    .testimonials-container {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 32px;
+    }
+    .testimonial {
+      background: var(--accent);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      max-width: 360px;
+      min-width: 280px;
+      box-shadow: 0 4px 12px rgba(127,86,217,0.04);
+      font-style: italic;
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .testimonial::before {
+      content: "“";
+      font-size: 2.5rem;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      color: var(--primary);
+      opacity: 0.2;
+    }
+    .testimonial .author {
+      display: block;
+      margin-top: 18px;
+      font-weight: 600;
+      color: var(--primary);
+      font-style: normal;
+    }
+    .pricing-row {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    .pricing-card {
+      flex: 1;
+      min-width: 270px;
+      max-width: 340px;
+      background: var(--accent);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(127,86,217,0.04);
+      padding: 34px 24px 28px 24px;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .pricing-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .pricing-card .price {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 14px 0 14px 0;
+      color: var(--primary);
+    }
+    .pricing-card ul {
+      list-style: none;
+      color: var(--gray);
+      margin-bottom: 18px;
+    }
+    .pricing-card ul li {
+      margin-bottom: 7px;
+    }
+    .pricing-card .cta-btn {
+      width: 100%;
+    }
+    #contact {
+      background: var(--accent);
+      border-radius: var(--radius);
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 38px 30px;
+      box-shadow: 0 4px 12px rgba(127,86,217,0.06);
+    }
+    #contact h2 {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+    #leadform {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 12px;
+    }
+    #leadform input,
+    #leadform textarea {
+      font-size: 1rem;
+      padding: 13px 14px;
+      border-radius: 7px;
+      border: 1px solid #ded7ee;
+      outline: none;
+      font-family: inherit;
+      background: #fff;
+      resize: vertical;
+      transition: border-color var(--transition);
+    }
+    #leadform input:focus,
+    #leadform textarea:focus {
+      border-color: var(--primary);
+    }
+    #leadform button[type="submit"] {
+      align-self: flex-end;
+      margin-top: 8px;
+    }
+    @media (max-width: 900px) {
+      .pricing-row {
+        flex-direction: column;
+      }
+      .testimonials-container {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      main { padding: 32px 8px; }
+      #contact { padding: 28px 10px; }
+      .features-list, .benefits-list {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="FORMA.png" alt="FORMA">
+    <div class="hero">
+      <h1>FORMA – Redefining Nail Beauty</h1>
+      <p>Discover the new standard in modern nail care. FORMA is the future of nail products, where luxury meets innovation for your everyday routine.</p>
+      <a href="#contact" class="cta-btn">Get Started</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="features">
+      <h2>Features</h2>
+      <div class="features-list">
+        <div class="feature">
+          <h3>Ultra-Durable Formula</h3>
+          <p>Our advanced nail polish is chip-resistant, highly pigmented, and long-lasting—giving you perfect nails for up to two weeks.</p>
+        </div>
+        <div class="feature">
+          <h3>Clean, Non-Toxic Ingredients</h3>
+          <p>FORMA polishes are 12-free, cruelty-free, and vegan—so your beauty never compromises your values.</p>
+        </div>
+        <div class="feature">
+          <h3>Effortless Application</h3>
+          <p>Easy glide brush and self-leveling formula ensure flawless results at home or in the salon.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits">
+      <h2>Benefits</h2>
+      <div class="benefits-list">
+        <div class="benefit">
+          <h3>Salon-Quality at Home</h3>
+          <p>Get professional-looking manicures with simple steps, saving you time and costly salon visits.</p>
+        </div>
+        <div class="benefit">
+          <h3>Safe for All Nails</h3>
+          <p>FORMA’s gentle, hypoallergenic formulas are safe for sensitive nails—even for kids and during pregnancy.</p>
+        </div>
+        <div class="benefit">
+          <h3>Express Your Style</h3>
+          <p>With a curated palette of trend-forward and timeless shades, every personality finds their perfect FORMA color.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonials-container">
+        <div class="testimonial">
+          FORMA has completely changed my nail routine. The color stays flawless and the clean ingredients give me peace of mind!
+          <span class="author">— Janine M.</span>
+        </div>
+        <div class="testimonial">
+          I love how easy it is to apply. I’m always getting compliments on my nails. Thank you FORMA!
+          <span class="author">— Samira K.</span>
+        </div>
+        <div class="testimonial">
+          Finally, a beautiful polish that’s actually safe. I won’t use anything else on my clients.
+          <span class="author">— Lily P. (Salon Owner)</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <h2>Pricing</h2>
+      <div class="pricing-row">
+        <div class="pricing-card">
+          <h3>Starter Kit</h3>
+          <div class="price">$24</div>
+          <ul>
+            <li>Includes 1 polish</li>
+            <li>Reusable storage pouch</li>
+            <li>Free shipping</li>
+          </ul>
+          <a href="#contact" class="cta-btn">Select Kit</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Pro Bundle</h3>
+          <div class="price">$64</div>
+          <ul>
+            <li>5 polishes: your choice of shades</li>
+            <li>Top & base coat</li>
+            <li>Free shipping + gift</li>
+          </ul>
+          <a href="#contact" class="cta-btn">Select Bundle</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Salon Partner</h3>
+          <div class="price">Contact Us</div>
+          <ul>
+            <li>Bulk rates for professionals</li>
+            <li>Custom collections</li>
+            <li>Dedicated support</li>
+          </ul>
+          <a href="#contact" class="cta-btn">Inquire Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form id="leadform">
+        <input type="text" name="name" required placeholder="Your Name">
+        <input type="email" name="email" required placeholder="Your Email">
+        <textarea name="message" rows="4" required placeholder="Your Message"></textarea>
+        <button type="submit" class="cta-btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
